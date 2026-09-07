@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #C8F000;
+  --color-ink: #08110B;
+  --color-surface: #101B14;
+  --color-panel: #17251B;
+  --color-line: #284030;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Dark theme (default) ──────────────────────────── */
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at top left, rgba(200, 240, 0, 0.12), transparent 34rem),
+    linear-gradient(135deg, #07100a 0%, #101b14 46%, #07100a 100%);
+  color: #e6f1dc;
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  overflow-x: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ── Light theme ───────────────────────────────────── */
+html[data-theme="light"] body {
+  background:
+    radial-gradient(circle at top left, rgba(200, 240, 0, 0.08), transparent 34rem),
+    linear-gradient(135deg, #f8faf5 0%, #f0f4e8 46%, #f8faf5 100%);
+  color: #1a2e1e;
+}
+
+/* Light theme: recolor white text  */
+html[data-theme="light"] [class*="text-white"] {
+  color: #0a1f0e !important;
+}
+
+/* Light theme: recolor slate text */
+html[data-theme="light"] [class*="text-slate-3"],
+html[data-theme="light"] [class*="text-slate-4"] {
+  color: #4a5e4f !important;
+}
+
+html[data-theme="light"] [class*="text-slate-5"] {
+  color: #5a6e5f !important;
+}
+
+html[data-theme="light"] [class*="text-slate-6"] {
+  color: #6b7e6f !important;
+}
+
+html[data-theme="light"] [class*="text-slate-7"] {
+  color: #8a9a8d !important;
+}
+
+/* Light theme: recolor borders */
+html[data-theme="light"] [class*="border-white/"] {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Light theme: recolor backgrounds */
+html[data-theme="light"] [class*="bg-surface"] {
+  background-color: #ffffff !important;
+}
+
+html[data-theme="light"] [class*="bg-white/"] {
+  background-color: rgba(0, 0, 0, 0.03) !important;
+}
+
+/* Light theme: navbar background */
+html[data-theme="light"] header.fixed {
+  background-color: rgba(248, 250, 245, 0.92) !important;
+  backdrop-filter: blur(16px);
+}
+
+/* Light theme: footer and dark sections */
+html[data-theme="light"] footer {
+  background-color: #f0f4e8 !important;
+}
+
+html[data-theme="light"] [class*="bg-\\[#0b150e\\]"],
+html[data-theme="light"] section[class*="muted"] {
+  background-color: rgba(240, 244, 232, 0.7) !important;
+}
+
+/* Light theme: soften shadows */
+html[data-theme="light"] [class*="shadow-black"] {
+  --tw-shadow-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Light theme: form fields */
+html[data-theme="light"] input,
+html[data-theme="light"] textarea {
+  background-color: #f5f7f2 !important;
+  border-color: rgba(0, 0, 0, 0.12) !important;
+  color: #1a2e1e !important;
+}
+
+html[data-theme="light"] input::placeholder,
+html[data-theme="light"] textarea::placeholder {
+  color: #8a9a8d !important;
+}
+
+/* ── Shared ────────────────────────────────────────── */
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(200, 240, 0, 0.28);
+  color: #f7ffd6;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #07100a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c8f000;
+  border-radius: 999px;
+}
+
+html[data-theme="light"] ::-webkit-scrollbar-track {
+  background: #f0f4e8;
+}
